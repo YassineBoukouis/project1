@@ -45,6 +45,8 @@ DEFAULT_CONFIG = {
     "clip_percentiles": (1, 99),
     # Subtract the mean and divide by the standard deviation.
     "standardize": True,
+    # Clip standardized values to [-limit, limit] (None = off).
+    "clip_standardized": None,
     # Put a column of ones first (the intercept of a linear model).
     "add_bias": True,
 }
@@ -194,6 +196,9 @@ def transform(x, state):
     if cfg["standardize"]:
         block -= state["mean"]
         block /= state["std"]
+        if cfg["clip_standardized"] is not None:
+            limit = cfg["clip_standardized"]
+            np.clip(block, -limit, limit, out=block)
     parts = []
     if cfg["add_bias"]:
         parts.append(np.ones((x.shape[0], 1), dtype=block.dtype))
