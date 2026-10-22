@@ -16,3 +16,6 @@ __pycache__/
 *.log
 *.out
 *.synctex.gz
+
+# for test purposes only, figures are generated in a separate folder
+figures_sample/
