@@ -1,0 +1,18 @@
+# data is large and must not be published
+data/
+*.csv
+*.npy
+*.zip
+
+# python / editor clutter
+__pycache__/
+*.pyc
+.pytest_cache/
+.vscode/
+.ipynb_checkpoints/
+
+# LaTeX build files
+*.aux
+*.log
+*.out
+*.synctex.gz
