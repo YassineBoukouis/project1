@@ -1,4 +1,5 @@
-"""Step 1b: look for feature columns that leak the label (_MICHD)."""
+"""Look for feature columns that leak the label (_MICHD)."""
+
 import sys
 
 import numpy as np
