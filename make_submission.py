@@ -20,7 +20,8 @@ LAMBDA = 1e-4
 GAMMA = 0.1
 CHUNKS = 6
 ITERS_PER_CHUNK = 50
-THRESHOLD = 0.5
+# Cut-off with the best F1 on the out-of-fold scores of the threshold sweep.
+THRESHOLD = 0.19
 OUTPUT_FILE = "submission.csv"
 
 
